@@ -1,13 +1,17 @@
-package OOP_110207_MelvernDio.week03
+package OOP_110207_MelvernDio.week03 // Pastikan package sesuai milikmu
 
 fun main() {
     val e = Employee("Budi")
 
-    println("--- Tes Gaji Positif (Benar) ---")
-    e.salary = 5000
-    println("Gaji Budi sekarang: ${e.salary}")
+    // 1. Test Validasi Salary
+    e.salary = -1000 // Harusnya print Error
+    e.salary = 5000000
+    println("Gaji: ${e.salary}")
 
-    println("\n--- Tes Gaji Negatif (Salah) ---")
-    e.salary = -1000
-    println("Gaji Budi sekarang: ${e.salary}")
+    // 2. Test Encapsulation
+    e.increasePerformance()
+    // e.performanceRating = 5 // Coba uncomment, pasti Merah (Error)
+
+    // 3. Test Computed Property
+    println("Pajak yang harus dibayar: ${e.tax}")
 }
