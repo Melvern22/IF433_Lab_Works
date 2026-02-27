@@ -15,14 +15,24 @@ fun main() {
     // Buat objek Weapon
     val pedang = Weapon("Excalibur")
 
-    // Coba set damage ke -50 (Harus gagal dan print peringatan)
     pedang.damage = -50
     println("Damage pedang sekarang: ${pedang.damage}")
 
-    // Coba set damage ke 9999 (Harus dipaksa jadi 1000)
     pedang.damage = 9999
     println("Damage pedang sekarang: ${pedang.damage}")
 
-    // Print Tier-nya (Karena 1000 > 800, harusnya Legendary)
     println("Tier senjata ${pedang.name}: ${pedang.tier}")
-}
+
+    println("\n=== TES TUGAS MANDIRI: PLAYER ===")
+
+        val player1 = Player("Melvern")
+
+        println("Menambahkan 50 XP...")
+        player1.addXp(50)
+        println("Level ${player1.username} sekarang: ${player1.level}") // Masih level 1
+
+        println("\nMenambahkan 60 XP...")
+        player1.addXp(60)
+
+    }
+
