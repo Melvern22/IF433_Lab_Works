@@ -34,4 +34,21 @@ fun main() {
 
     val luasLingkaran = mathHelper.hitungLuas(7.0)
     println("Luas Lingkaran (jari-jari 7.0) = $luasLingkaran")
+
+    println("\n=== SIMULASI PEMBAYARAN (POLYMORPHISM) ===")
+
+    // 1. Buat objek EWallet dan CreditCard
+    val dompetKu = EWallet(accountName = "Dompet Digital", balance = 50000.0)
+    val kartuKreditKu = CreditCard(accountName = "Kartu Kredit Bank", limit = 100000.0)
+
+    // 2. Masukkan ke dalam list bertipe parent (PaymentMethod)
+    val daftarMetodeBayar: List<PaymentMethod> = listOf(dompetKu, kartuKreditKu)
+
+    // 3. Lakukan perulangan dan panggil processPayment dengan nominal 75000.0
+    val tagihan = 75000.0
+    println("Mencoba membayar tagihan sebesar $$tagihan...\n")
+
+    for (metode in daftarMetodeBayar) {
+        metode.processPayment(tagihan)
+    }
 }
