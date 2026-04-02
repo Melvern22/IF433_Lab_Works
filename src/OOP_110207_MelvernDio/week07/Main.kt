@@ -43,4 +43,10 @@ fun main() {
     // 1. Simulasi Singleton GameManager
     GameManager.startGame()
     GameManager.startGame() // Memanggil dua kali untuk melihat efek Singleton
+
+    println("\nPeluang drop item LEGENDARY: ${ItemRarity.LEGENDARY.dropChance}%")
+
+    val myWeapon = Weapon.forgeStarterSword()
+    val starterItem = myWeapon.item
+    println("Senjata awal dibuat: ${starterItem.name} (Damage: ${starterItem.damage}, Rarity: ${starterItem.rarity})")
 }
