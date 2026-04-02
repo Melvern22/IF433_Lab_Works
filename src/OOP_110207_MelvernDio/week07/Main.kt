@@ -40,7 +40,7 @@ fun main() {
 
     println("\n=== SIMULASI GAME RPG ===")
 
-    // 1. Simulasi Singleton GameManager
+
     GameManager.startGame()
     GameManager.startGame() // Memanggil dua kali untuk melihat efek Singleton
 
@@ -49,4 +49,13 @@ fun main() {
     val myWeapon = Weapon.forgeStarterSword()
     val starterItem = myWeapon.item
     println("Senjata awal dibuat: ${starterItem.name} (Damage: ${starterItem.damage}, Rarity: ${starterItem.rarity})")
+
+    val upgradedItem = starterItem.copy(damage = 25)
+    println("\nBerhasil upgrade di Blacksmith! Senjata baru memiliki Damage: ${upgradedItem.damage}")
+
+    println("\n-- Memulai Sinyal Event --")
+    processEvent(BattleState.SafeZone)
+    processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
+    processEvent(BattleState.LootDropped(upgradedItem))
+    processEvent(BattleState.GameOver("Terkena jebakan racun"))
 }
