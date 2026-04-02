@@ -37,4 +37,10 @@ fun main() {
     }
 
     println(uiMessage) // Cetak ke konsol
+
+    println("\n=== SIMULASI GAME RPG ===")
+
+    // 1. Simulasi Singleton GameManager
+    GameManager.startGame()
+    GameManager.startGame() // Memanggil dua kali untuk melihat efek Singleton
 }
