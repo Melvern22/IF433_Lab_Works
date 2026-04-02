@@ -1,5 +1,11 @@
 package OOP_110207_MelvernDio.week07
 
 fun main() {
-    val client = NetworkClient.createClient()
+    println("=== TEST SINGLETON ===")
+    println("Status: ${DatabaseManager.connectionStatus}")
+    DatabaseManager.connect()
+
+    println("\n=== TEST COMPANION OBJECT ===")
+    val client = NetworkClient.createClient() // Instansiasi lewat Factory
+    client.connect()
 }
