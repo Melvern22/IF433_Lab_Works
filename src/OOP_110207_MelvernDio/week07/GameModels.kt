@@ -7,3 +7,6 @@ enum class ItemRarity(val dropChance: Int) {
     EPIC(5),
     LEGENDARY(1)
 }
+
+// --- KODE BARU UNTUK CHECKPOINT 14 ---
+data class GameItem(val name: String, val damage: Int, val rarity: ItemRarity)
